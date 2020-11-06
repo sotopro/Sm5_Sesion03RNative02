@@ -27,11 +27,19 @@ export const GlobalProvider = ({ children }) => {
             payload: employees
         })
     }
+
+    const editEmployee = (employees) => {
+        dispatch({
+            type: 'EDIT_EMPLOYEE',
+            payload: employees
+        })
+    }
     return (
         <GlobalContext.Provider value={{
             employees: state.employees,
             removeEmployee,
-            addEmployee
+            addEmployee,
+            editEmployee
         }}>
             {children}
         </GlobalContext.Provider>
